@@ -22,7 +22,7 @@ export class FormComponent implements OnInit {
     }
     ngOnInit() {
       this.destinations.getDestination().subscribe( data=>{
-          this.cities = data.aeropuertos;
+          this.cities = data["aeropuertos"];
           setTimeout(function(){
               $("#niceSelect, #niceSelectTwo").niceSelect();
           },0);
@@ -33,12 +33,11 @@ export class FormComponent implements OnInit {
     }
     guardar(){
         var form = document.forms[0];
-        this.newReservation.salida = form.querySelector('#niceSelect').value;
-        this.newReservation.regreso = form.querySelector('#niceSelectTwo').value;
-        this.newReservation.fsalida = form.querySelector('#datepicker').value;
-        this.newReservation.fregreso = form.querySelector('#datepickerTwo').value;
-        this.newReservation.pasajeros  = form.querySelector('#numPas').value;
+        this.newReservation.salida      = (<HTMLInputElement>form.querySelector('#niceSelect')).value;
+        this.newReservation.regreso     = (<HTMLInputElement>form.querySelector('#niceSelectTwo')).value;
+        this.newReservation.fsalida     = (<HTMLInputElement>form.querySelector('#datepicker')).value;
+        this.newReservation.fregreso    = (<HTMLInputElement>form.querySelector('#datepickerTwo')).value;
+        this.newReservation.pasajeros   = (<HTMLInputElement>form.querySelector('#numPas')).value;
         this._router.navigate(['/showData', this.newReservation]);
-        console.log(this.newReservation);
     }
 }
