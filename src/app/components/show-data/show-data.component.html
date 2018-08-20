@@ -1,0 +1,11 @@
+
+<div class="container-data">
+    <div class="color-white lato bolder">Reserva exitosa</div>
+    <div class="color-white lato"><i class="fas fa-money-check-alt"></i> <span>Tipo de vuelo:</span> {{data.type}}</div>
+    <div class="color-white lato"><i class="fas fa-plane-departure input-icon"></i> <span>Salida:</span> {{data.salida}}</div>
+    <div class="color-white lato"><i class="fas fa-plane-arrival input-icon"></i> <span>Regreso:</span> {{data.regreso}}</div>
+    <div class="color-white lato"><i class="fas fa-calendar input-icon"></i> <span>Fecha de salida:</span> {{data.fsalida}}</div>
+    <div class="color-white lato"><i class="fas fa-calendar input-icon"></i> <span>Fecha de vuelta:</span> {{data.fregreso}}</div>
+    <div class="color-white lato"><i class="fas fa-user input-icon"></i> <span>Numero de pasajeros:</span> {{data.pasajeros}}</div>
+    <button type="button" name="button" class="btn lato" [routerLink]="['/form']">Regresar</button>
+</div>

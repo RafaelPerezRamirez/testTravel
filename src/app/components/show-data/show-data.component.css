@@ -1,0 +1,23 @@
+.container-data{
+    background: rgba(0,0,0,0.8);
+    padding: 30px;
+}
+.container-data div{
+    margin-bottom: 30px;
+}
+.container-data div.bolder{
+    font-size: 35px;
+}
+.container-data div span{
+    text-transform: uppercase;
+}
+.btn{
+    background: #49af54;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    width: 150px;
+    font-size: 17px;
+}

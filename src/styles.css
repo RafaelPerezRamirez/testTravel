@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+	margin:0px;
+	padding:0px;
+	color:inherit;
+	text-decoration:none;
+	box-sizing:border-box;
+}
+body,html{
+	display:block;
+	min-height:100%;
+	position: relative;
+	overflow-x: hidden!important;
+}
+ol,ul {
+	list-style-position: inside;
+}
+img{
+	max-width:100%;
+	height:auto;
+	border: 0px solid;
+}
+.lato{
+    font-family: 'Lato', sans-serif;
+}
+.light{
+    font-weight: lighter;
+}
+.bolder{
+    font-weight: bolder;
+}
+.color-white{
+    color: white;
+}
+.button-submit:disabled{
+	display: inline-block!important;
+	opacity: 0.5;
+	cursor: inherit;
+}

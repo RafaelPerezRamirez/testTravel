@@ -1,0 +1,74 @@
+<div class="content-form">
+    <h2 class="form-title color-white lato">
+        PLANEA TU VIAJE
+        <span class="move-title">CON NOSOTROS</span>
+    </h2>
+    <form (ngSubmit)="guardar()" #forma="ngForm">
+        <div class="options-form">
+            <div class="option-form color-white selected lato">
+                VUELOS
+            </div>
+            <div class="option-form color-white lato">
+                HOTELES
+            </div>
+        </div>
+        <div class="row-input">
+            <input type="radio" name="gender" value="Redondo" [(ngModel)]="newReservation.type" required><span class="color-white lato">REDONDO</span>
+            <input type="radio" name="gender" value="Sencillo" [(ngModel)]="newReservation.type" required><span class="color-white lato">SENCILLO</span>
+            <input type="radio" name="gender" value="Multidestino" [(ngModel)]="newReservation.type" required><span class="color-white lato">MULTIDESTINO</span>
+        </div>
+        <div class="row-input main-row-input">
+            <div class="content-input">
+                <select id="niceSelect" class="input-form wide" name="salida">
+                    <option data-display="Origen"></option>
+                    <option [value]="city.name" *ngFor="let city of cities">{{city.name}}</option>
+                </select>
+                <i class="fas fa-plane-departure input-icon"> |</i>
+            </div>
+            <div class="content-input">
+                <select id="niceSelectTwo" class="input-form wide" name="regreso">
+                    <option data-display="Destino"></option>
+                    <option [value]="city.name" *ngFor="let city of cities">{{city.name}}</option>
+                </select>
+                <i class="fas fa-plane-arrival input-icon"> |</i>
+            </div>
+            <div class="content-input">
+                <input
+                    type="text"
+                    name="fsalida"
+                    placeholder="Fecha Salida"
+                    class="input-form"
+                    id="datepicker"
+                    (input)="name=$event.target.value"
+                >
+                <i class="fas fa-calendar input-icon"> |</i>
+            </div>
+            <div class="content-input">
+                <input
+                    type="text"
+                    name="fregreso"
+                    placeholder="Fecha Regreso"
+                    class="input-form"
+                    id="datepickerTwo"
+                >
+                <i class="fas fa-calendar input-icon"> |</i>
+            </div>
+            <div class="content-input">
+                <input
+                    type="number"
+                    min="0"
+                    name="pasajeros"
+                    placeholder=" Pasajeros"
+                    class="input-form"
+                    id="numPas"
+                    ngModel
+                    required
+                >
+                <i class="fas fa-user input-icon"> |</i>
+            </div>
+            <button type="submit" class="button-submit" name="button" [disabled]="!forma.valid">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </form>
+</div>
